@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collegesathi</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-transparent">
+                <div class="navigation_main">
+                    <a class="navbar-brand" href="index.html">
+                        <figure>
+                            <img class="img-fluid" src="assets/images/logo-01.svg" alt="logo">
+                        </figure>
+                    </a>
+                </div>
+                <div class="menu_icon">
+                    <div class="top_right_icon">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary" href="login.html"> <i class="fa fa-user-o" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg_gray budget_options_section">
+        <div class="container">
+
+            <div class="progress_bar">
+                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+            </div>
+
+
+
+            <div class="degree_heading text-center">
+                <!-- <span>Your best match is just 2 minutes away!</span> -->
+                <h1>Your Highest Qualification?</h1>
+            </div>
+            <div class="degree_contant_box budget_options_contant">
+                <ul>
+                    <li>
+
+                        <input type="radio" name="flexRadioDefault" id="PGCourses">
+                        <label for="PGCourses">
+                            <small>Postgraduate</small>
+                        </label>
+
+                    </li>
+
+                    <li>
+
+                        <input type="radio" name="flexRadioDefault" id="UGCourses">
+                        <label for="UGCourses">
+                            <small>College Graduate</small>
+                        </label>
+
+                    </li>
+
+                    <li>
+
+                        <input type="radio" name="flexRadioDefault" id="ExecutiveEducation">
+                        <label for="ExecutiveEducation">
+                            <small>Completed 12th</small>
+                        </label>
+
+                    </li>
+                    <li>
+
+                        <input type="radio" name="flexRadioDefault" id="SkillingCertificate">
+                        <label for="SkillingCertificate">
+                            <small>Completed 10th</small>
+                        </label>
+
+                    </li>
+                    <li>
+
+                        <input type="radio" name="flexRadioDefault" id="AdvancedDiploma">
+                        <label for="AdvancedDiploma">
+                            <small>Diploma Holder</small>
+                        </label>
+
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <footer class="footer_step">
+        <div class="container">
+            <div class="step_btn text-center">
+                <a href="university_step_four.html" class="btn btn-white">Back</a>
+                <a href="university_step_six.html" class="btn btn-next">Next</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="overley_backdrop"></div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/custome.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+
+    <script>
+
+        $('.responsive').slick({
+            dots: true,
+            infinite: false,
+            autoplaySpeed: 2000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>

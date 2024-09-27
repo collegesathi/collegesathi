@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>::collegesathi::</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/responsive.css" type="text/css">
+</head>
+<body class="comingsoon">
+<!-- Header Start -->
+
+<div class="cominsoon_page">
+  <div class="container">
+   <div class="cominsoon_detail">
+   <div class="cominsoon_left wow fadeInLeft animated">
+     <a href="javascript:void(0);"><img src="images/logo.png" alt="The Local Retailer" height="50"></a>
+      <div class="comingsoon_heading">
+      <h1>“We are building something awesome! </h1>
+      <span>Our website is currently under construction and will be live in the coming weeks. <br>Stay tuned”</span>
+      </div>
+      
+      
+      <div class="launching_soon">
+       <strong>Launching Soon</strong>
+        
+        
+        <div class="countdown_Section">
+        <ul>
+         <li>
+          <div class="counter_timer">
+           <span>Days</span>
+            <strong id="days"></strong>
+          </div>
+         </li>
+         <li>
+          <div class="counter_timer">
+           <span>Hours</span>
+           <strong id="hours"></strong>
+          </div>
+         </li>
+         <li>
+          <div class="counter_timer">
+           <span>MINUTES</span>
+           <strong id="minutes"></strong>
+          </div>
+         </li>
+         <li>
+          <div class="counter_timer">
+           <span>Seconds</span>
+           <strong id="seconds"></strong>
+          </div>
+         </li>
+        </ul>
+         </div>
+        
+        
+      </div>
+      
+    </div>  
+    <div class="cominsoon_right wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
+      <figure><img src="images/cominsoon-img.png" class="img-fluid" alt="img"></figure>
+    </div>  
+   </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="js/jquery.min.js"></script> 
+<script src="js/popper.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+
+<script>
+ (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  let birthday = "May 31, 2024 00:00:00",
+      countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        let now = new Date().getTime(),
+            distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          let headline = document.getElementById("headline"),
+              countdown = document.getElementById("countdown"),
+              content = document.getElementById("content");
+
+          headline.innerText = "It's my birthday!";
+          countdown.style.display = "none";
+          content.style.display = "block";
+
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+</script>
+
+</body>
+</html>
