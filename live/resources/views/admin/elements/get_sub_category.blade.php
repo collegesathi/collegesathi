@@ -1,0 +1,1 @@
+{{ Form::select('sub_category_id',array(''=>trans('messages.global.please_select_subcategory'))+$subcategoryList,null, ['class' => 	'form-control','id'=>'sub_category_id']) }}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36.517" height="36.517" viewBox="0 0 36.517 36.517">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="path1624" d="M0-682.665H36.517v36.517H0Z" transform="translate(0 682.665)"/>
+    </clipPath>
+  </defs>
+  <g id="g1614" transform="translate(0 682.665)">
+    <g id="g1616" transform="translate(16.043 -677.699)">
+      <path id="path1618" d="M-156.361-78.4v2.215H-165.2l2.215-3.323-2.215-3.323h6.646" transform="translate(165.198 82.826)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <g id="g1620" transform="translate(0 -682.665)">
+      <g id="g1622" clip-path="url(#clip-path)">
+        <g id="g1628" transform="translate(0.535 31.551)">
+          <path id="path1630" d="M-93.161,0h3.6V4.431h-8.862V0h2.933" transform="translate(98.426)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <path id="path1632" d="M184.531-166.806h-8.862v-8.862h8.862Z" transform="translate(-166.272 202.788)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <g id="g1634" transform="translate(18.259 22.689)">
+          <path id="path1636" d="M-99.03,0h3.265V13.293h-8.862V0h3.265" transform="translate(104.626)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <path id="path1638" d="M515.86-323.609H507v-17.723h8.862Z" transform="translate(-479.878 359.591)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <g id="g1640" transform="translate(30.443 0.535)">
+          <path id="path1642" d="M-39.2-177.426v7.7h-2.215v-17.729H-39.2v7.7" transform="translate(41.415 187.453)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <path id="path1644" d="M424.167-624.6h7.754v-6.646h-7.754Z" transform="translate(-401.477 -48.668)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
