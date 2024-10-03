@@ -2632,7 +2632,7 @@ class CustomHelper
 
         $courseDetails = Course::where('course_category', $categoryId)->where('active', ACTIVE)->orderBy('created_at', 'DESC')->get();
         return $courseDetails;
-        die;
+     
     } // end getCourseDetails()
 
 

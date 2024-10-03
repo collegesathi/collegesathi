@@ -19,18 +19,21 @@
 
                     </li>
                     @foreach($otherUniversities as $otherUnivversitiesDetails)
-                    <li>
-                        <div class="course">
-                            <h4>{{ $otherUnivversitiesDetails->getAllUniversityDetails->title }}</h4>
-                        </div>
-                        <div class="full_fees">
-                            <h4>{{ $otherUnivversitiesDetails->total_fee }}</h4>
-                        </div>
-                        <div class="full_fees">
-                            <h4>{{ $otherUnivversitiesDetails->getAllUniversityDetails->nirf_ranking }}</h4>
-                        </div>
-                    </li>
-                    @endforeach
+                       
+                            @if($otherUnivversitiesDetails->total_fee >= 150000)
+                                <li>
+                                    <div class="course">
+                                        <h4>{{ $otherUnivversitiesDetails->getAllUniversityDetails->title }}</h4>
+                                    </div>
+                                    <div class="full_fees">
+                                        <h4>{{ $otherUnivversitiesDetails->total_fee }}</h4>
+                                    </div>
+                                    <div class="full_fees">
+                                        <h4>{{ $otherUnivversitiesDetails->getAllUniversityDetails->nirf_ranking }}</h4>
+                                    </div>
+                                </li>
+                            @endif
+                        @endforeach
                 </ul>
             </div>
 

@@ -160,17 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center"><span
-                            style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                    alt="" aria-hidden="true"
-                                    src="{{ WEBSITE_IMG_URL }}global.gif"
-                                    style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                alt="global" src="{{ WEBSITE_IMG_URL }}global.gif"
-                                decoding="async" data-nimg="intrinsic"
-                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                srcset="{{ WEBSITE_IMG_URL }}global.gif"></span>
-                    </div>
+                   
                     <div class="sign_up_access">
                         <h3> {{ trans('front_messages.global.signup_now') }}<br>
                             {{ trans('front_messages.global.access_list') }}</h3>

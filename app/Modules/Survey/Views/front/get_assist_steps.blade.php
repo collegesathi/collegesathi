@@ -28,10 +28,28 @@
                 $processCurrentAnswerClass = 'current_answer_process';
             }
         @endphp
-
+        
         <div class="degree_contant_box {{$processCurrentAnswerClass}}">
             <ul>
                 @foreach ($SurveQuestion->getAnswers as $answer)
+                    @if($SurveQuestion->slug == 'your-preferred-specialisation')
+                        @if($answerArray[0]['current_answer'] == $answer->course_id)
+                        <li>
+                                    <input class="current_answer" name="current_answer" id="{{ $answer->answer }}" type="radio"
+                                        value="{{ $answer->id }}" <?php    if ($saved_current_answer == $answer->id) {
+                        echo "checked";
+                    }?>>
+                                    <label for="{{ $answer->answer }}">
+                                        @if(count($SurveQuestion->getAnswers) < 7)
+                                            <span> <img class="main_img" src="{{WEBSITE_IMAGE_URL }}degree_icon.svg" alt="img"> </span>
+                                            <span> <img class="white_img" src="{{ WEBSITE_IMAGE_URL }}degree_icon_white.svg"
+                                                    alt="img"></span>
+                                        @endif
+                                        <small>{{ !empty($answer->answer) ? $answer->answer : 'N/A' }}</small>
+                                    </label>
+                                </li>
+                        @endif
+                    @else
                                 <li>
                                     <input class="current_answer" name="current_answer" id="{{ $answer->answer }}" type="radio"
                                         value="{{ $answer->id }}" <?php    if ($saved_current_answer == $answer->id) {
@@ -46,6 +64,7 @@
                                         <small>{{ !empty($answer->answer) ? $answer->answer : 'N/A' }}</small>
                                     </label>
                                 </li>
+                                @endif
                 @endforeach
             </ul>
         </div>

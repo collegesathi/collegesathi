@@ -24,4 +24,5 @@ class SurveyAnswer extends Eloquent   {
         return $this->belongsTo('App\Modules\SurveQuestionAnswer\Models\SurveQuestion', 'question_id','id');
     }
 	
+	
 } // end SurveAnswer class

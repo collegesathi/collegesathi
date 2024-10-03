@@ -159,7 +159,7 @@ class SurveyController extends BaseController
             if (Session::has('answer_array')) {
                 $answerArray    =    Session::get('answer_array');
             }
-
+       
             $answerArray[]    =    array(
                 'current_question_id' => $current_question_id,
                 'current_answer' => $current_answer,
