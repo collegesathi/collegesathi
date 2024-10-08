@@ -1,5 +1,0 @@
-@foreach($result as $key => $value)
-	<li>
-		@include('elements.single_blog_list', ['blogData' => $value])
-	</li>
-@endforeach

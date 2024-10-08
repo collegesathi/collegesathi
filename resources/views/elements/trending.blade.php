@@ -1,58 +1,91 @@
-<section class="trending">
-    @if (!empty($specializationCourses->toArray()))
-    <div class="container">
-        <div class="trending_content">
+@php
+    $blogList = CustomHelper::getTrendList();
+   
+@endphp
+@if (!empty($blogList))
+    <section class="blog_section">
+        <div class="container">
+            <div class="blog_main">
+			
+			<div class="headingCard">
+			<h2 class="heading text-center"> {!! trans('front_messages.global.specialization_course_heading') !!}</h2>
+            <p class="text-center paragraphline">{{ trans('front_messages.global.specialization_heading_detail') }}
+                    </p>
+			  </div>
+			
+         
+                <div class="item_slider ">
+                    <div class="owl-carousel blog_slider owl-theme">
 
-            <div class="headingCard">
-                <h2 class="heading text-center">{!! trans('front_messages.global.specialization_course_heading') !!}</h2>
-                <p class="text-center paragraphline">{{ trans('front_messages.global.specialization_heading_detail') }}</p>
-            </div>
+                        @foreach ($blogList as $blogData)
+                            <div class="item">
+                                <div class=" blog_content">
 
-            <h2>
-            </h2>
-            <div class="item_slider">
-                <div class="owl-carousel trending_slider owl-theme">
-                    @foreach ($specializationCourses as $specializations)
-                    @if (!empty($specializations->getUniversityDetails))
-                    <div class="item">
-                        <div class="best_trending">
-                            <a href="{{ route('University.universityCourseDetail', [$specializations->university_slug, $specializations->course_slug]) }}" class="text-decoration-none text-dark">
-                                <figure>
-                                    <?php echo $image = CustomHelper::showImage(COURSE_IMAGE_ROOT_PATH, COURSE_IMAGE_URL, $specializations->image, '', ['alt' => $specializations->image, 'height' => '258', 'width' => '404', 'zc' => 1]);  ?>
-                                </figure>
-                            </a>
-                            <div class="trending_content_box">
-                                <div class="trending_wrap">
-                                    <figure class="university_logo_explore_program">
-                                        @if ($specializations->getUniversityDetails->image != '' && File::exists(UNIVERSITY_IMAGE_ROOT_PATH . $specializations->getUniversityDetails->image))
-                                        <img src="{{ UNIVERSITY_IMAGE_URL . $specializations->getUniversityDetails->image}}" alt="image">
-                                        @endif
-                                        <?php
-                                        // echo $image = CustomHelper::showImage(UNIVERSITY_IMAGE_ROOT_PATH, UNIVERSITY_IMAGE_URL, $specializations->getUniversityDetails->image, '', ['alt' => $specializations->getUniversityDetails->image, 'height' => '40', 'width' => '40', 'zc' => 2]);
-                                        ?>
+                                    @php
+                                        $root_path = TREND_IMAGE_ROOT_PATH;
+                                        $http_path = TREND_IMAGE_URL;
+                                        $attribute = [];
+                                        $type = '';
+                                        $attribute['alt'] = $blogData->title;
+                                        $attribute['width'] = '404';
+                                        $attribute['height'] = '258';
+                                        $attribute['zc'] = '1';
+                                        $attribute['type'] = '3';
+                                        $image_name = $blogData->image;
 
-                                    </figure>
-                                    <div class="trending_caption">
-                                        <p>
-                                            <a href="{{ route('University.universityCourseDetail', [$specializations->university_slug, $specializations->course_slug]) }}" class="text-decoration-none text-dark">
-                                                {{ $specializations->getUniversityDetails->title }}
-                                        </p>
+                                        $image = CustomHelper::showImage($root_path, $http_path, $image_name, $type, $attribute);
+                                    @endphp
+
+                                    <figure>
+                                        <a href="{{route('Specialization.postView',$blogData->slug)}}">
+                                            {!! $image !!}
                                         </a>
-                                        <span class="sub_title">{{ CustomHelper::displayPrice($specializations->total_fee) }}</span>
-                                    </div>
+                                    </figure>
+									<div class="blogWrapper">
+                                    <h3><a href="{{route('Specialization.postView',$blogData->slug)}}">
+                                            {{ isset($blogData->title) ? $blogData->title : 'N/A' }}</a></h3>
+                                    <span>
 
+                                        @php
+                                            if (isset($blogData->addedByUser->user_role_id) && $blogData->addedByUser->user_role_id == SUPER_ADMIN_ROLE_ID) {
+                                                $addedBy = 'Admin';
+                                            } else {
+                                                $addedBy = $blogData->addedByUser->full_name;
+                                            }
+
+                                            $created_at        = CustomHelper::convert_date_to_timestamp($blogData->created_at);
+                                            $blogDate       = date(BLOG_DETAIL_DATE_FORMAT,$created_at);
+
+                                        @endphp
+
+                                        {{ $blogDate }} | {{$addedBy}}
+                                    </span>
+
+                                    @php
+                                        $description = isset($blogData->descriptionData->description) ? trim($blogData->descriptionData->description) : '';
+                                        $description = !empty($description) ? strip_tags($description) : '';
+                                        $description = !empty($description) ? Str::limit($description, BLOG_LIST_DESCRIPTION_LENGTH) : '';
+                                    @endphp
+
+                                    <p>{!! $description !!}</p>
+									
+                                    <div class="content_btn">
+                                        <a href="{{route('Specialization.postView',$blogData->slug)}}"
+                                            class="btn-link">{{ trans('front_messages.global.read_more') }}</a>
+                                    </div>
+									 </div>
                                 </div>
-                                <a href="{{ route('University.universityCourseDetail', [$specializations->university_slug, $specializations->course_slug]) }}" class="text-decoration-none text-dark">
-                                    <h3>{{ CustomHelper::getStringLimit($specializations->name,23) }}</h3>
-                                </a>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-                    @endif
-                    @endforeach
                 </div>
+
+                <!-- <div class="blog_btn">
+                    <a href="{{route('Specialization.frontIndex')}}" class="btn btn-primary">
+                        View All Blog</a>
+                </div> -->
             </div>
+
         </div>
-    </div>
-    @endif
-</section>
+    </section>
+@endif

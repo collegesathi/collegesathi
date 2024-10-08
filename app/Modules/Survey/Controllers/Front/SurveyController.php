@@ -217,19 +217,41 @@ class SurveyController extends BaseController
         }
         $getAllQuestions = CustomHelper::getAllQuestionIdByCategory($category);
         $selectedQuestionAnswerArray = array();
+    
         foreach ($answerArray as $answersQuestions) {
+
+            // Check if the current question ID is not in the array of all questions
             if (!in_array($answersQuestions['current_question_id'], $getAllQuestions)) {
                 Session::flash(ERROR, trans('front_messages.survey.form_incorret_message'));
                 return Redirect::route('survey.getAssist');
             } else {
-                $getQuestionAnswerDetails = SurveyAnswer::with('getQuestionDetails')->findOrFail($answersQuestions['current_answer']);
-                $selectedQuestionAnswerArray[] = [
-                    'question_id' => $getQuestionAnswerDetails->question_id,
-                    'answer_id' => $getQuestionAnswerDetails->id,
-                    'question' => $getQuestionAnswerDetails->getQuestionDetails->question,
-                    'answer' => $getQuestionAnswerDetails->answer
-                ];
-                Session::put('selected_answer_array', $selectedQuestionAnswerArray);
+                        
+                // Try fetching the question details for the current answer
+                try {
+                    $getQuestionAnswerDetails = SurveyAnswer::with('getQuestionDetails')->findOrFail($answersQuestions['current_answer']);
+        
+                    // Check if the relation exists
+                    if ($getQuestionAnswerDetails->getQuestionDetails) {
+                        $selectedQuestionAnswerArray[] = [
+                            'question_id' => $getQuestionAnswerDetails->question_id,
+                            'answer_id' => $getQuestionAnswerDetails->id,
+                            'question' => $getQuestionAnswerDetails->getQuestionDetails->question, // Only access if not null
+                            'answer' => $getQuestionAnswerDetails->answer
+                        ];
+                    } 
+                    // else {
+                    //     // Handle cases where the relationship is null
+                    //     echo "Warning: No question details found for answer ID " . $answersQuestions['current_answer'];
+                    //     continue; // Skip to the next iteration
+                    // }
+        
+                    Session::put('selected_answer_array', $selectedQuestionAnswerArray);
+                
+                } catch (\Exception $e) {
+                    // Handle the error, log it, and continue
+                  //  echo "Error fetching question details for answer ID " . $answersQuestions['current_answer'];
+                    continue;
+                }
             }
         }
 

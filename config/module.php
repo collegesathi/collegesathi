@@ -49,6 +49,7 @@ return [
 		'Scholarship',
 		'ReviewRating',
 		'SurveQuestionAnswer',
-		'EnquireNow'
+		'EnquireNow',
+		'Specialization'
     ],
 ];

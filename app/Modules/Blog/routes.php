@@ -12,7 +12,6 @@
 
 Route::group(array('prefix' => ADMIN_ROUTE_PREFIX, 'namespace' => 'App\Modules\Blog\Controllers'), function () {
     Route::group(array('middleware' => ['web', 'App\Http\Middleware\PreventBackHistory', 'App\Http\Middleware\AuthAdmin']), function () {
-
         //Blog manager  module  routing start here
         Route::any('/blog-manager', array('as' => 'Blog.index', 'uses' => 'BlogController@index'));
         Route::get('blog-manager/add-blog', array('as' => 'Blog.add', 'uses' => 'BlogController@addBlog'));

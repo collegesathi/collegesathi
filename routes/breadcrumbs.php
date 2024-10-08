@@ -262,6 +262,8 @@ Breadcrumbs::for('blog-view', function (BreadcrumbTrail $trail) {
 });
 
 
+
+
 ###########  Breadcrumbs for Block #############################
 Breadcrumbs::for('block', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
@@ -540,4 +542,26 @@ Breadcrumbs::for('university-add-loan-partners', function (BreadcrumbTrail $trai
 Breadcrumbs::for('course_specification', function (BreadcrumbTrail $trail,$univercityId) {
     $trail->parent('course',$univercityId);
     $trail->push('Specification');
+});
+
+
+###########  Breadcrumbs for Trending #############################
+Breadcrumbs::for('specialization-list', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+	$trail->push('Specialization', route('Specialization.index'));
+});
+
+Breadcrumbs::for('specialization-add', function (BreadcrumbTrail $trail) {
+    $trail->parent('specialization-list');
+	$trail->push('Add trend');
+});
+
+Breadcrumbs::for('specialization-edit', function (BreadcrumbTrail $trail) {
+    $trail->parent('specialization-list');
+	$trail->push('Edit trend');
+});
+
+Breadcrumbs::for('specialization-view', function (BreadcrumbTrail $trail) {
+    $trail->parent('specialization-list');
+	$trail->push('View trend');
 });

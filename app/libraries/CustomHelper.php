@@ -26,6 +26,7 @@ use App\Modules\Transactions\Models\UserBalanceAmountLog;
 use App\Services\SendMailService;
 use App\Modules\Expert\Models\Expert;
 use App\Modules\Blog\Models\Blog;
+use App\Modules\Specialization\Models\Specialization;
 use App\Modules\University\Models\University;
 use App\Modules\University\Models\UniversityCampus;
 use App\Modules\University\Models\Course;
@@ -2251,7 +2252,21 @@ class CustomHelper
     }
 
 
+    public static function getTrendList($universityId = null)
+    {
+        $totalBlogs = specialization::where('is_active', ACTIVE)->where('university_id', $universityId)->count();
+       
+        // echo $totalBlogs;
+        if ($totalBlogs > HOME_PAGE_BLOG_LIMIT) {
+            $blogLimit = HOME_PAGE_BLOG_LIMIT;
+        } else {
+            $blogLimit = $totalBlogs;
+        }
+      
+        $blogList = specialization::where('is_active', ACTIVE)->where('university_id', $universityId)->with(['addedByUser'])->get()->random($blogLimit);
 
+        return $blogList;
+    }
 
     /**
      * CustomHelper::getUniversiryNameById()
