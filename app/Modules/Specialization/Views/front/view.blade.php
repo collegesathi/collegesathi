@@ -16,11 +16,10 @@ $addedBy = $record->addedByUser->full_name;
 
 @endphp
 <section class="blog_details_section common_background_img">
-    <div class="container">
-        <div class="blog_detailsbanner box_shadow">
+    <div class="container sarfsrdfs">
+        <div class="blog_detailsbanner box_shadow dddd">
             <figure>
-                @php echo CustomHelper::showImage(TREND_IMAGE_ROOT_PATH, TREND_IMAGE_URL, $record->image_1, '', ['alt' => $record->title, 'id' => $record->id , 'height' =>'759', 'width' =>'1320', 'zc' =>'2']); @endphp
-            </figure>
+            <img src="http://localhost/mukul/images/it-mng.png" alt="Top Online executive MBA Universities in India"></figure>
         </div>
 
         <div class="blog_details box_shadow">

@@ -116,6 +116,32 @@
                                     </div>
                                 @endforeach
                             </div>
+                            
+                            @if ($type == 'course')
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div>
+                                                    {{ Form::label('show_on_footer', trans("messages.$modelName.show_on_footer") . '<span class="required">  </span>', ['class' => 'control-label'], false) }}
+                                                    <div class="form-check">
+                                                        <div class="col-sm-6">
+                                                            @php
+                                                                $checked = isset($model->show_on_footer) && ($model->show_on_footer == (int)1) ? 'checked' : '';
+                                                            @endphp
+                                                            <input class="form-check-input" type="checkbox" id="show_on_footer" name="show_on_footer" value="1" {{$checked}}>
+                                                            <label class="form-check-label" for="show_on_footer">Show On Footer</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="error help-inline">
+                                                    <?php echo $errors->first('show_on_footer'); ?>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                             <div>
                                 <button type="submit" class="btn bg-pink btn-sm waves-effect btn-submit"><i
                                         class="material-icons font-14">save</i>

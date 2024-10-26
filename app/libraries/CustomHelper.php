@@ -2660,7 +2660,22 @@ class CustomHelper
         return $courseDetails;
     }
 
+    public static function getCoursesListWithUniversities(){
+        $courses = DropDown::with(['universityCourses' => function($query) {
+            $query/*->inRandomOrder()*/;
+        }])
+        ->where('dropdown_type', 'course')
+        ->where('show_on_footer', ACTIVE)
+        ->where('status', ACTIVE)
+        ->get();
+    
+        // Limit the universityCourses for each DropDown to 5
+        // $courses->each(function($course) {
+        //     $course->universityCourses = $course->universityCourses->take(4);
+        // });
 
+        return $courses;
+    }
 
 
 

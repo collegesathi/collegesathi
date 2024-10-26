@@ -119,7 +119,7 @@ $afterblogAdsshow = FRONT_BLOG_PER_PAGE - 1;
 
                     @foreach ($blogResult as $blog)
                     <li>
-                        @include('elements.single_blog_list', ['blogData' => $blog])
+                        @include('elements.single_trend_list', ['blogData' => $blog])
                     </li>
                     @endforeach
 

@@ -52,8 +52,8 @@
     <link rel="canonical" href="{{ url()->current() }}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-   
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     {{ HTML::style('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}
     {{ HTML::style(WEBSITE_CSS_URL . 'bootstrap.min.css') }}
     {{ HTML::style(WEBSITE_CSS_URL . 'style.css') }}
@@ -75,7 +75,7 @@
     {{ HTML::script(WEBSITE_JS_URL . 'jquery.min.js') }}
     <!-- <script src="https://www.google.com/recaptcha/api.js?render={{env('GOOGLE_RECAPTCHA_KEY')}}"></script>-->
     <meta name="google-site-verification" content="ctjrYS8CcMeQyNfXySZCPvY052PLTpVzFkVJw1QMLmM" />
-    
+
 </head>
 
 <body>
@@ -83,10 +83,10 @@
 
 
     <!-- Overlay For Sidebars -->
-    <div class="loading-cntant" id="overlay" style="display: none">
+    <!-- <div class="loading-cntant" id="overlay" style="display: none">
         <div class="loader"></div>
     </div>
-    <div class="overlay"></div>
+    <div class="overlay"></div> -->
     <!-- #END# Overlay For Sidebars -->
 
     <!-- Google Tag Manager (noscript) -->
@@ -140,8 +140,6 @@
             })
         })
 
-
-
         $("#ProgramsListScroll").on('click', 'a', function () {
             $("#ProgramsListScroll .list-group-item.active").removeClass("active");
             $(this).addClass("active");
@@ -149,19 +147,27 @@
 
         $(window).scroll(function () {
             var windscroll = $(window).scrollTop();
+
+            // Ensure windscroll is logged correctly
+            console.log('Current Scroll Position:', windscroll);
+
             if (windscroll >= 0) {
                 $('.scrollspy-example section').each(function (i) {
-                    if ($(this).position().top <= windscroll - -100) {
+                    // Check if the section is within the current scroll position
+                    if ($(this).position().top <= windscroll + 100 && $(this).position().top + $(this).outerHeight() > windscroll) {
+                        // Remove 'active' class from the previous li
                         $('#ProgramsListScroll li.active').removeClass('active');
+
+                        // Add 'active' class to the current li based on the index
                         $('#ProgramsListScroll li').eq(i).addClass('active');
                     }
                 });
             } else {
+                // If scroll is at the top, default the first item to active
                 $('#ProgramsListScroll li.active').removeClass('active');
                 $('#ProgramsListScroll li:first').addClass('active');
             }
         }).scroll();
-
         $(document).ready(function () {
             $('#ProgramsListScroll li a').on('click', function () {
                 var page = $(this).attr('href'); // Page cible
@@ -176,20 +182,20 @@
 
     <!--Start of Tawk.to Script-->
     <?php /*
-   <script type="text/javascript">
-       var Tawk_API = Tawk_API || {},
-           Tawk_LoadStart = new Date();
-       (function() {
-           var s1 = document.createElement("script"),
-               s0 = document.getElementsByTagName("script")[0];
-           s1.async = true;
-           s1.src = 'https://embed.tawk.to/6603c665a0c6737bd1255393/1hpvbtvbg';
-           s1.charset = 'UTF-8';
-           s1.setAttribute('crossorigin', '*');
-           s0.parentNode.insertBefore(s1, s0);
-       })();
-   </script>
-   */ ?>
+  <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+          Tawk_LoadStart = new Date();
+      (function() {
+          var s1 = document.createElement("script"),
+              s0 = document.getElementsByTagName("script")[0];
+          s1.async = true;
+          s1.src = 'https://embed.tawk.to/6603c665a0c6737bd1255393/1hpvbtvbg';
+          s1.charset = 'UTF-8';
+          s1.setAttribute('crossorigin', '*');
+          s0.parentNode.insertBefore(s1, s0);
+      })();
+  </script>
+  */ ?>
     <!--End of Tawk.to Script-->
 
     {{-- Enquire Now Script --}}

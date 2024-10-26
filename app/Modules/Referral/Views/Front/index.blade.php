@@ -65,14 +65,7 @@
                             <div class="error error_reference_city text-danger"></div>
                         </div>
 
-                        <div class="form_col_12">
-                            <div class="form-group col-sm-6 g-recaptcha-box">
-                            <input type="hidden" id="g-recaptcha-response-referral" name="g-recaptcha-response">
-                            <span class="error  help-inline g-recaptcha-response_error referral-g-recaptcha-response_error" id="g-recaptcha-response_error_div">
-                                <?php echo $errors->first('g-recaptcha-response'); ?>
-                            </span>
-                            </div>
-                        </div>
+                    
 
                         <div class="contact_btn">
                             <button type="submit" class="btn btn-primary" id="referal_form_btn">{{trans("front_messages.global.submit")}}</button>

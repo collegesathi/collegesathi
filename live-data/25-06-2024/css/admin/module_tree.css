@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* ========================================================================
+ * Module Tree Css
+ * ======================================================================== */
+
+.module > ul {
+ 	list-style: outside none none;
+}
+.parent_li .dashboard {
+ 	border: 2px solid #cccccc;
+ 	border-radius: 5px;
+ 	display: inline-block;
+ 	font-size: 0.9em;
+ 	cursor:pointer;
+ 	margin-top: 8px;
+ 	margin-left:37px;
+ 	padding: 5px 8px;
+ 	text-decoration: none;
+ 	background-color: #04a2b3;
+ 	color: #fff;
+}
+.cursor_pointer{
+	cursor:pointer;
+}
+.childTree{
+	display:none;
+}
+.hide{
+	display:none;
+}
+.fa.plusbtn.fa-plus-circle, .fa.plusbtn.fa-minus-circle{
+	border: 2px solid #c0c2c7;
+	padding: 6px 5px;
+	cursor:pointer;
+	border-radius: 5px;
+	font-size: 0.9em;
+	display: inline-block;
+	margin-right:0px;
+}
+.parent_child_label{
+	border: 2px solid #cccccc;
+	border-radius: 5px;
+	display: inline-block;
+	font-size: 0.9em;
+	background-color: #04a2b3;
+	cursor:pointer;
+	margin-top: 8px;
+	padding: 5px 8px;
+	text-decoration: none;
+	color: #fff;
+}
+.children_ul{
+	list-style-type:none;
+}
+.children_span{
+	border: 2px solid #82b964;
+	padding: 3px 5px;
+	cursor:pointer;
+	border-radius: 5px;
+	font-size: 1.0em;
+	display: inline-block;
+	margin-right:2px;
+	background-color:#82b964;
+	color: #fff;
+}
+.childTree li::before{
+	border-left: 2px solid #c0c2c7;
+	bottom: 50px;
+	height: 100%;
+	top: 0;
+	width: 1px;
+}
+.childTree li::before, .childTree li::after {
+	content: "";
+	left: -15px;
+	position: absolute;
+	right: auto;
+}
+.childTree li::after {
+	border-top: 2px solid #c0c2c7;
+	height: 20px;
+	top: 21px;
+	width: 20px;
+}
+.childTree li{
+	padding:9px 5px 9px 5px;
+	position:relative;
+}
+.childTree li:last-child::before {
+	height: 23px;
+}
+/* ========== Permission Pages Css Here =========== */
+.parent_child_span {
+	border: 2px solid #c0c2c7;
+	padding: 2px 5px;
+	cursor:pointer;
+	border-radius: 5px;
+	font-size: 0.9em;
+	display: inline-block;
+	margin-right:0px;
+}
+.trees {
+	min-height: 20px;
+}
+.trees li span a {
+	color: #555
+}
+.trees li {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 5px 0 5px;
+	position: relative
+}
+.trees li::before,
+.trees li::after {
+	content: "";
+	left: -20px;
+	position: absolute;
+	right: auto
+}
+.trees li::before {
+	border-left: 2px solid #c0c2c7;
+	bottom: 50px;
+	height: 100%;
+	top: 0;
+	width: 1px
+}
+.trees li::after {
+	border-top: 2px solid #c0c2c7;
+	height: 20px;
+	top: 30px;
+	width: 25px
+}
+.trees li span {
+	border: 2px solid #c0c2c7;
+	border-radius: 5px;
+	font-size: 0.9em;
+	display: inline-block;
+	padding: 1px 5px;
+	margin-top: 8px;
+	margin-right: 2px;
+	text-decoration: none;
+}
+.trees li .label.label-danger {
+	border: 2px solid #d24d33;
+}
+.trees li .label.label-info {
+	border: 2px solid #5bc0de;
+}
+.trees li .label.label-warning {
+	border: 2px solid #f0ad4e;
+}
+.trees li .label.label-default {
+	border: 2px solid #999;
+}
+.trees li .label.label-success {
+	border: 2px solid #82b964;
+}
+.trees li.parent_li > span {
+	cursor: pointer
+}
+.trees > ul > li::before,
+.trees > ul > li:after {
+	border: 0
+}
+.trees li:last-child::before {
+	height: 30px
+}
+.label.label-success {
+ 	background-color: #82b964 !important;
+}

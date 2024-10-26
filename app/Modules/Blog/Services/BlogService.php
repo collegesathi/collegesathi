@@ -29,7 +29,9 @@ class BlogService
      * @return $validation message and validation
      **/
     public static function BlogValidateandSave($formData = array(), $attribute = array()){
-
+echo "<pre>";
+print_r($formData);
+echo "</pre>";
         $status                 = null;
         $response               = array();
         $errorsArray            = array();
@@ -55,7 +57,7 @@ class BlogService
             $obj                    = ($type == 'add')  ?   new Blog :  Blog::findorFail($attribute['blog_id']);
             $obj->title             = $formData['title'];
             if($type == 'add'){
-                $obj->slug              = CustomHelper::getSlug($formData['title'], 'slug', 'Blog');
+                $obj->slug              = CustomHelper::getSlug($formData['slug'], 'slug', 'Blog');
             }
             $obj->description       = $formData['description'];
             $obj->meta_title        = !empty($formData['meta_title']) ? $formData['meta_title'] : '';

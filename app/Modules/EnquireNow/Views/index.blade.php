@@ -90,6 +90,7 @@
                             <th> {{ trans('messages.global.country') }} </th>
                             <th> {{ trans('messages.global.state') }} </th>
                             <th> {{ trans('messages.global.city') }} </th>
+                            <th>Created Date</th>
                         </tr>
                     </thead>
                     <tbody id="powerwidgets">
@@ -104,6 +105,8 @@
                                     <td data-th="{{ trans('messages.global.country') }}">{{ $record->countryName->country_name }}</td>
                                     <td data-th="{{ trans('messages.global.state') }}">{{ $record->stateName->state_name }}</td>
                                     <td data-th="{{ trans('messages.global.city') }}">{{ $record->cityName->city_name }}</td>
+                                    <td data-th="created:">{{ $record->created_at }}</td>
+
                                 </tr>
                             @endforeach
                         @else

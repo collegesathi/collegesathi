@@ -1,8 +1,8 @@
-grecaptcha.ready(function() {
-    grecaptcha.execute(reCAPTCHASiteKey).then(function(token) {
-        document.getElementById('g-recaptcha-response-referral').value = token;
-    });
-});
+// grecaptcha.ready(function() {
+//     grecaptcha.execute(reCAPTCHASiteKey).then(function(token) {
+//         document.getElementById('g-recaptcha-response-referral').value = token;
+//     });
+// });
 
 $(document).ready(function() {
 
@@ -120,15 +120,15 @@ $(document).ready(function() {
             },
         }
     }).on('click', '#referal_form_btn', function(e) {
-        var captcha = $('#referal_form').find('[name="g-recaptcha-response"]').val();
-        if(captcha===''){
-            $(".referral-g-recaptcha-response_error").html('Please fill recaptcha.');
-        }
-        else{
-            $(".referral-g-recaptcha-response_error").html('');
-            $("#referal_form_btn").removeClass("disabled");
-            $("#referal_form_btn").removeAttr("disabled");
-        }
+        // var captcha = $('#referal_form').find('[name="g-recaptcha-response"]').val();
+        // if(captcha===''){
+        //     $(".referral-g-recaptcha-response_error").html('Please fill recaptcha.');
+        // }
+        // else{
+        //     $(".referral-g-recaptcha-response_error").html('');
+        //     $("#referal_form_btn").removeClass("disabled");
+        //     $("#referal_form_btn").removeAttr("disabled");
+        // }
     }).on('success.form.fv', function(e) {
         var formData 				= 	new FormData($("#referal_form")[0]);
 
@@ -148,9 +148,7 @@ $(document).ready(function() {
             success: function(data) {
                 unblockedUI();
                 
-                grecaptcha.execute(reCAPTCHASiteKey).then(function(token) {
-					document.getElementById('g-recaptcha-response-referral').value = token;
-				});
+             
 
                 $('.error').empty();
                 if (data.status == "success") {

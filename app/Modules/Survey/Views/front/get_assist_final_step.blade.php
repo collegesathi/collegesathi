@@ -1,5 +1,6 @@
 @extends('layouts.default')
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
 
@@ -24,143 +25,48 @@
         <div class="details_access_main">
             <div class="details_logo_main access_column">
                 <div class="bg-white details_logo_box">
-                    <h3>Just one more step! <br> Enter your details to view your personalized recommendations</h3>
+                    <h3 class="chhh">Just one more step! <br> Enter your details to view your personalized
+                        recommendations</h3>
+                        <div class="logo-center">
+            <img src="http://localhost/mukul/images/step-img.gif" alt="Centered Logo">
+        </div>
                     <div class="swiper-container">
-                        <div class="swiper-wrapper"
-                            style="width: 762px; transition-duration: 5000ms; transform: translate3d(-304.667px, 0px, 0px);">
-                            <div class="swiper-slide" style="width: 132.333px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg" alt=""></span>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="grid-container">
+                                    <!-- First Row -->
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg"
+                                            alt="Logo 1"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo12.jpg"
+                                            alt="Logo 2"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo2.jpg"
+                                            alt="Logo 3"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg"
+                                            alt="Logo 1"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo13.jpg"
+                                            alt="Logo 2"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo9.jpg"
+                                            alt="Logo 3"></div>
+                                    <!-- Second Row -->
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo5.jpg"
+                                            alt="Logo 4"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo6.jpg"
+                                            alt="Logo 5"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg"
+                                            alt="Logo 6"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo1.jpg"
+                                            alt="Logo 4"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo3.jpg"
+                                            alt="Logo 5"></div>
+                                    <div class="grid-item"><img src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg"
+                                            alt="Logo 6"></div>
                                 </div>
                             </div>
-                            <div class="swiper-slide swiper-slide-prev" style="width: 132.333px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo12.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo12.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo12.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active" style="width: 132.333px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo2.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo2.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo2.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-next" style="width: 132.333px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo13.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo13.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo13.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 132.333px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo9.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo9.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo9.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 132.333px; margin-top: 20px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo5.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo5.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo5.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 132.333px; margin-top: 20px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo6.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo6.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo6.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 132.333px; margin-top: 20px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo4.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 132.333px; margin-top: 20px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo1.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo1.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo1.jpg" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 132.333px; margin-top: 20px; margin-right: 20px;">
-                                <div class="shadow-1 position-relative px-2 py-2 card"><span
-                                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                alt="" aria-hidden="true"
-                                                src="{{ WEBSITE_IMG_URL }}Online-Education-logo3.jpg" alt=""
-                                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                                            alt="" src="{{ WEBSITE_IMG_URL }}Online-Education-logo3.jpg" alt=""
-                                            decoding="async" data-nimg="intrinsic" class="rounded w-100"
-                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                                            srcset="{{ WEBSITE_IMG_URL }}Online-Education-logo3.jpg" alt=""></span>
-                                </div>
-                            </div>
+                            <!-- Add more slides as needed -->
                         </div>
+          
                     </div>
-                   
+                    
                     <div class="sign_up_access">
                         <h3> {{ trans('front_messages.global.signup_now') }}<br>
                             {{ trans('front_messages.global.access_list') }}</h3>
@@ -169,7 +75,13 @@
             </div>
             <div class="contact_details_box access_column">
                 <div class="bg-white details_box_main">
-
+                <div class="bg-light d-flex fs-11 align-items-center justify-content-center gap-2 mt-0 flex-wrap py-3 shadow-sm rounded"
+                                style="background: #f9f9f9; border: 1px solid #ddd;">
+                                <img src="http://localhost/mukul/images/expertimages-01.svg" alt="Team image"
+                                    style="width: 50px; height: auto;" class="rounded-circle">
+                                <span class="fw-bold fs-12 text-dark">Consult with our Collegesathi experts.</span>
+                                <span class="text-warning"><i class="fas fa-handshake"></i></span>
+                            </div>
                     <div class="access_list_box pb-30">
                         <div class="form-check icon_input ">
                             {{ Form::radio('gender', MALE, MALE, ['id' => 'Main']) }}
@@ -332,8 +244,44 @@
                             </span>
                         </div>
                     </div>
+                    <div class="pt-1 row">
+                        <div class="col">
+                            <!-- Secure Information Section -->
+                            <div class="text-center form_desc" style="
+    margin-top: -24px; margin-bottom: -16px;
+">
+                                <div class="mt-3 text-center bg-gradient d-inline-block rounded p-2"
+                                    style="background: linear-gradient(45deg, #6ab7ff, #007bff);">
+                                    <span class="fs-12 fw-bold px-3">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                            viewBox="0 0 448 512" class="lock-icon" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z">
+                                            </path>
+                                        </svg>
+                                        Your information is safe and protected with us.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Connect with Experts Section -->
+                            
+
+                                                        <!-- Authorization Statement -->
+                            <p class="fs-11 text-center mt-3" style="padding: 0 15px;">
+                            I authorize Collegesathi to contact me via Phone, Email, WhatsApp or SMS. This will take precedence over any DND or NDNC requests. 
+                                <a href="http://localhost/mukul/pages/privacy-policy" target="_blank" style="color: #007bff;">Privacy Policy</a>,
+                                <a href="http://localhost/mukul/pages/term-and-conditions/" target="_blank" style="color: #007bff;">Terms of Use</a>
+                            </p>
+                        </div>
+                    </div>
+
                     <button type="submit" id="submit1"
-                        class="btn btn-primary submit_btn">{{ trans('front_messages.global.submit') }}</button>
+                        class="btn btn-primary submit_btn stp" style="
+    margin-top: 14px;
+        width: 153px;
+">{{ trans('front_messages.global.submit') }}</button>
                 </div>
             </div>
         </div>
@@ -386,6 +334,10 @@
 @stop
 
 <style>
+    .logo-center {
+    text-align: center;
+    /* margin-top: 20px; */
+}
     .otpInputContainer {
         position: relative;
         display: flex;
@@ -401,7 +353,11 @@
 </style>
 
 <style>
-    .swiper-container {
+      .contact_details_box button.stp{
+        margin-left: 142px;
+        }
+  
+    /* .swiper-container {
         width: 100%;
         overflow: hidden;
     }
@@ -414,42 +370,102 @@
     .swiper-slide {
         flex-shrink: 0;
         width: auto;
+    } */
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h3.chhh {
+        font-family: 'Poppins', sans-serif;
+        /* Use a modern font */
+        font-size: 28px;
+        /* Make the text larger */
+        color: #333;
+        /* Darker color for good contrast */
+        text-align: center;
+        /* Keep it centered */
+        line-height: 1.4;
+        /* Add line height for better readability */
+        letter-spacing: 1px;
+        /* Space out the letters slightly */
+        background: black;
+        /* Gradient text */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* Make the gradient apply only to the text */
+        font-weight: 600;
+        /* Make it semi-bold for a strong look */
+        margin-bottom: 20px;
+        /* Add some spacing below the heading */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow to give depth */
+    }
+
+    .text-center {
+    text-align: center;
+}
+
+.fs-11 {
+    font-size: 11px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.shadow-sm {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.bg-gradient {
+    background: linear-gradient(45deg, #6ab7ff, #007bff);
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.fas.fa-handshake {
+    font-size: 18px; /* Adjust the size as per your need */
+    color: #EC1C24;  /* Change the color if you want */
+}
 </style>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,        // Number of visible slides at once
-            spaceBetween: 20,        // Space between slides
-            loop: true,              // Enable looping
-            speed: 500,              // Transition speed
-            autoplay: {
-                delay: 3000,           // Autoplay delay
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-            },
-        });
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1, // Or the number of grids you want visible at a time
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 5000,
+        },
     });
 
 

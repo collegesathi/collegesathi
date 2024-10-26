@@ -10,12 +10,14 @@ $courseCategories = CustomHelper::getCourseCategory();
             <img class="img-fluid" src="{{ WEBSITE_IMG_URL }}COLLEGESATHI-8-years.svg" alt="logo">
           </figure>
         </a>
-        <div class="search-button" id="srch-btn">
-              <a href="javascript:void(0);">
+        <div id="srch-btn">
+        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#searchpopup">
                 <img src="{{ WEBSITE_IMG_URL }}search_icon.png" alt="">
               </a>
 </div>
-        <div class="navigation">
+        <div class="navigation" style="
+    margin-right: 103px;
+">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item megaMenu">
               <div class="responsive_nav">
@@ -340,11 +342,13 @@ $courseCategories = CustomHelper::getCourseCategory();
       </div>
       <div class="menu_icon">
         <div class="top_right_icon">
-          <ul>
-            <li class="search-button">
-              <a href="javascript:void(0);">
-                <img src="{{ WEBSITE_IMG_URL }}search_icon.png" alt="">
-              </a>
+          <ul>          
+            <li id="searchButton" style="
+    margin-right: -22px;
+">
+<a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#searchpopup">
+            <span class="cursor-pointer fs-14 rounded px-2 py-2 textprimary" style="margin-left: 61px; background-color: #EC1C24; color: #fff; text-wrap: nowrap;">Search <span class="textprimary">|</span> <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" font-size="14" class="textprimary" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg></span>
+                      </a>
             </li>
             @if (Auth::user())
             <li class="nav-item">
@@ -397,7 +401,7 @@ $courseCategories = CustomHelper::getCourseCategory();
                 </div>-->
             </li>
             @else
-            <li class="nav-item">
+            <li class="nav-item" >
               <a class="btn btn-primary login-btn" href="{{ route('User.login') }}">
                 Sign in
               </a>
@@ -427,7 +431,57 @@ $courseCategories = CustomHelper::getCourseCategory();
       <a href="javascript:void(0);" class="search-close-btn btn text-decoration-none text-light"><i class="fa fa-times" aria-hidden="true"></i></a>
     </div>
   </form>
+
+  <!-- Modal -->
+  <div class="modal fade fade-flip search-popup" id="searchpopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="searchpopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg_gray">
+                <form action="{{ route('University.listing') }}">
+                    <div class="search-section-start">
+                        <a class="navbar-brand" href="{{ route('home.index') }}">
+                            <figure>
+                                <img class="img-fluid" src="http://localhost/mukul/images/COLLEGESATHI-8-years.svg" alt="logo">
+                            </figure>
+                        </a>
+                        <div class="search-bar d-flex align-items-center">
+                            <button class="search-icon"><img src="{{ WEBSITE_IMG_URL }}search_icon.png" alt="img"></button>
+                            <input type="text" id="searchInput" name="search" placeholder="Search for Best Universities, Courses & more..." value="{{ isset($queryString['search']) && !empty($queryString['search']) ? $queryString['search'] : '' }}">
+                            <!-- Microphone icon for voice search -->
+                            <button type="button" id="voiceSearchBtn" style="background: none; border: none; cursor: pointer; margin-left: 5px;">
+                                <img src="http://localhost/mukul/images/mic.svg" alt="Voice Search" width="25">
+                            </button>
+                        </div>
+                        <div class="trending-search-box text-center mt-4">
+                            <h3 class="mb-4">Trending Searches
+                              <span>👇</span>
+                            </h3>
+                            <ul class="trending-list d-flex flex-wrap align-items-center justify-content-center mb-0 p-0">
+                                <li><a href="http://localhost/mukul/universities?search=online+MBA">Online MBA</a></li>
+                                <li><a href="http://localhost/mukul/universities?search=online+Executive+MBA">Online Executive MBA</a></li>
+                                <li><a href="http://localhost/mukul/universities?search=ma">Online MA</a></li>
+                                <li><a href="http://localhost/mukul/universities?search=bba">Online BBA</a></li>
+                                <li><a href="http://localhost/mukul/universities?search=mca">Online MCA</a></li>
+                                <li><a href="http://localhost/mukul/universities?search=m.com">Online M.Com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 </header>
+<body>
+    <div id="app">
+        <!-- Add your Vue component here -->
+        <example-component></example-component>
+    </div>
+</body>
 <style>
  #srch-btn {
     display: none; /* Hide by default */
@@ -438,4 +492,86 @@ $courseCategories = CustomHelper::getCourseCategory();
         display: block; /* Show on mobile devices (up to 767px wide) */
     }
 }
+
+.search-bar {
+    position: relative;
+    width: 100%;
+}
+
+#voiceSearchBtn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 </style>
+<script>
+  // Voice search function using Web Speech API
+function startVoiceRecognition() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US'; // Set the language for recognition
+
+    recognition.onstart = function() {
+        console.log('Voice recognition started...');
+    };
+
+    recognition.onspeechend = function() {
+        recognition.stop();
+        console.log('Voice recognition ended.');
+    };
+
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+     
+
+        // Insert the recognized voice input into the search box
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.value = transcript;
+        }
+    };
+
+    recognition.onerror = function(event) {
+        console.error('Error in recognition:', event.error);
+    };
+
+    recognition.start();
+}
+
+// Attach event listener to the voice search button
+document.getElementById('voiceSearchBtn').addEventListener('click', () => {
+    startVoiceRecognition();
+});
+
+
+$('#searchButton').on('click', function() {
+    $('#searchModal').modal('hide');  // Hide the modal
+    $('.modal-backdrop').remove();    // Remove the backdrop
+});
+$('#srch-btn').on('click', function() {
+    $('#searchModal').modal('hide');  // Hide the modal
+    $('.modal-backdrop').remove();    // Remove the backdrop
+});
+
+// Array of placeholder texts
+const placeholderTexts = [
+        'Search for Best Universities',
+        'Search for Best Courses',
+        'Search for Specializations',
+        'Search for Online Programs'
+    ];
+
+    let currentIndex = 0; // Start with the first placeholder
+
+    // Function to change the placeholder
+    function changePlaceholder() {
+        const searchInput = document.getElementById('searchInput');
+        searchInput.placeholder = placeholderTexts[currentIndex];
+        currentIndex = (currentIndex + 1) % placeholderTexts.length; // Loop through the array
+    }
+
+    // Change placeholder every 2 seconds (2000 milliseconds)
+    setInterval(changePlaceholder, 2000);
+</script>
+

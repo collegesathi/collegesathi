@@ -49,7 +49,7 @@ Route::group(array('prefix' => ADMIN_ROUTE_PREFIX, 'namespace' => 'App\Modules\B
 Route::group(array('prefix' => '', 'namespace' => 'App\Modules\Blog\Controllers\Front'), function () {
     Route::group(array('middleware' => ['web', 'App\Http\Middleware\PreventBackHistory', 'App\Http\Middleware\GuestFront']), function () {
         Route::get('/blogs', array('as' => 'Blog.frontIndex', 'uses' => 'BlogController@index'));
-        Route::any('/blogs/detail/{slug}', array('as' => 'Blog.postView', 'uses' => 'BlogController@viewBlog'));
+        Route::any('/blogs/{slug}', array('as' => 'Blog.postView', 'uses' => 'BlogController@viewBlog'));
         Route::any('/blog-load-more', array('as' => 'Blog.blogLoadMore', 'uses' => 'BlogController@blogLoadMore')); 
     });
 });

@@ -1,0 +1,16 @@
+.scholarship-banner.common_banner {
+    background-color: transparent;
+}
+.scholarship-banner {
+    padding: 30px 0;
+}
+.scholarship-banner {
+    background-image: url('{{ WEBSITE_IMG_URL }}army-page-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.scholarship-banner {
+    min-height: 444px;
+    display: flex;
+    align-items: center;
+}

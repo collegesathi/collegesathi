@@ -3,7 +3,7 @@
    
 @endphp
 @if (!empty($blogList))
-    <section class="blog_section">
+    <section class="blog_section blgsct">
         <div class="container">
             <div class="blog_main">
 			
@@ -80,10 +80,10 @@
                     </div>
                 </div>
 
-                <!-- <div class="blog_btn">
+                <div class="blog_btn">
                     <a href="{{route('Specialization.frontIndex')}}" class="btn btn-primary">
-                        View All Blog</a>
-                </div> -->
+                        View All</a>
+                </div>
             </div>
 
         </div>

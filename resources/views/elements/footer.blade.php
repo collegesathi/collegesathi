@@ -162,6 +162,52 @@
                     </div>
                 </div>
             </div>
+             <!-- Course Specifications List -->
+             @php
+                $courses = CustomHelper::getCoursesListWithUniversities();
+            @endphp
+<div class="footer_navigation_main footer_mega_menu accordion" id="accordionExample">
+    @if ($courses->isNotEmpty())
+        @foreach ($courses as $coursesList)
+            <div class="footer-navigation_listing">
+                <div class="footer_navigation">
+                    <h4>{{ $coursesList->name }}</h4>
+                    <a class="btn collapsed accordion_filter" data-bs-toggle="collapse" href="#collapse{{ $coursesList->slug }}"
+                        aria-expanded="false" aria-controls="collapse{{ $coursesList->name }}">
+                        {{ $coursesList->name }}
+                    </a>
+                    <div class="collapse accordion-collapse" id="collapse{{ $coursesList->slug }}" data-bs-parent="#accordionExample">
+                        @if ($coursesList->universityCourses->isNotEmpty())
+                        <ul class="university-list" id="universityList{{ $coursesList->slug }}">
+                            @foreach ($coursesList->universityCourses->take(5) as $universities)
+                            <?php 
+                            if($universities->university->title=='Lovely Professional University(LPU)'){
+                                $universities->university->title= 'LPU';
+                            }
+                            
+                            ?>
+                                <li><a href="{{ route('University.frontIndex',$universities->university->slug) }}">{{ $universities->university->title }}</a></li>
+                            @endforeach
+                            @if ($coursesList->universityCourses->count() > 5)
+                                <li class="view-all-btn" id="viewAllBtn{{ $coursesList->slug }}">
+                                    <a href="javascript:void(0)" onclick="showAllUniversities('{{ $coursesList->slug }}')">View All</a>
+                                </li>
+                            @endif
+                        </ul>
+                        <!-- Hidden full list -->
+                        <ul class="university-list d-none" id="fullUniversityList{{ $coursesList->slug }}">
+                            @foreach ($coursesList->universityCourses as $universities)
+                                <li><a href="{{ route('University.frontIndex',$universities->university->slug) }}">{{ $universities->university->title }}</a></li>
+                            @endforeach
+                        </ul>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @endif
+</div>
+            <!-- Course Specifications List -->
         </div>
 
 
@@ -224,10 +270,11 @@
                 <li class="active"><a href="{{ route('home.index') }}">
                         <figure><img src="{{ WEBSITE_IMG_URL }}home-icon.svg" alt="Home"></figure>
                         {{ trans('front_messages.global.home') }}
-                    </a></li>
+                    </a>
+                <!-- </li>
                          <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#searchpopup">
                         <figure><img src="{{ WEBSITE_IMG_URL }}search_icon.png" alt="search"></figure> {{ trans('front_messages.global.search') }}
-                    </a></li> 
+                    </a></li>  -->
                 <li>                  
                     <a href="tel:+919785800008" class="phone-number">
                     <figure><img src="{{ WEBSITE_IMG_URL }}call-us.svg" alt="survay"></figure>call us
@@ -319,7 +366,30 @@
             </div>
         </div>
     </div>
+    <style>
+ /* .view-all-btn {
+    text-align: center;
+    margin-top: 10px;
+} */
 
+.view-all-btn a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.view-all-btn a:hover {
+    color: #0056b3;
+}
+
+/* To ensure proper alignment within different containers */
+
+    
+    .d-none {
+        display: none;
+    }
+</style>
     <script type="text/javascript">
         grecaptcha.ready(function () {
             grecaptcha.execute(reCAPTCHASiteKey).then(function (token) {
@@ -434,6 +504,15 @@
             });
         }
     </script>
-  
+  <script>
+    function showAllUniversities(slug) {
+        // Hide the "View All" button and truncated list
+        document.getElementById('universityList' + slug).classList.add('d-none');
+        document.getElementById('viewAllBtn' + slug).classList.add('d-none');
+        
+        // Show the full university list
+        document.getElementById('fullUniversityList' + slug).classList.remove('d-none');
+    }
+</script>
 
 @endif
